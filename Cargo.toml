@@ -1,0 +1,29 @@
+[package]
+name = "ec-pke"
+version = "0.1.0"
+edition = "2024"
+description = "ECC PKE"
+license = "MIT"
+
+[dependencies]
+sm3 = { version = "0.4.2", default-features = false, optional = true }
+digest = { version = "0.10.7", default-features = false }
+elliptic-curve = { version = "0.13.8", default-features = false, features = [
+    "arithmetic",
+    "sec1",
+] }
+rand_core = { version = "0.6.4" }
+sec1 = { version = "0.7.3", default-features = false }
+der = { version = "0.7.9", default-features = false }
+
+[features]
+default = ["sm3", "os_rng", "std"]
+std = ["alloc"]
+alloc = []
+sm3 = ["dep:sm3"]
+os_rng = ["rand_core/getrandom"]
+
+[dev-dependencies]
+hex-literal = "1"
+sm2 = "0.13"
+proptest = "1"
