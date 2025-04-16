@@ -1,9 +1,11 @@
 [package]
 name = "ec-pke"
-version = "0.1.0"
+version = "0.1.2"
 edition = "2024"
 description = "ECC PKE"
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/MaxKingPor/ec-pke"
 
 [dependencies]
 sm3 = { version = "0.4.2", default-features = false, optional = true }
